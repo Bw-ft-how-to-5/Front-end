@@ -18,7 +18,9 @@ return (
 
 <label htmlFor = "password">
   <Field type="password" name="password" placeholder="password" />
- 
+  {touched.password && errors.password && (
+    <p>{errors.password}</p>
+)}
   </label>
   <button type="submit">Submit</button>
 
@@ -34,14 +36,23 @@ const SignInForm = withFormik({
   mapPropsToValues(props) {
     // set initial state of form to value from parent component OR the initial value (after || )
     return {
-        email:props.email || ""
+        email:props.email || "",
+        password:props.password  || ""
    
     };
   },
 
   validationSchema: Yup.object().shape({
-   email: Yup.string().required()
-    // passing a string in required makes a custom inline error msg
+   email: Yup.string().required(),
+  
+   password: Yup.string()
+   .required('No password provided.') 
+   .min(8, 'Password is too short - should be 8 chars minimum.')
+   .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
+  
+  
+ 
+
    
   }),
 
