@@ -5,10 +5,10 @@ import * as Yup from "yup";
 
 const SignIn = ({values, errors, touched, status}) => {
 return (
-<div>
-<Form>
+<div className='Sign-in-div'>
+<Form className = 'Sign-in'> 
 
-
+<h2>Sign In</h2>
 <label htmlFor = "email">
 <Field type="text" name="email" placeholder="email" />
 {touched.email && errors.email && (
@@ -22,11 +22,11 @@ return (
     <p>{errors.password}</p>
 )}
   </label>
+ <label>
   <button type="submit">Submit</button>
-
-
+  </label>
 </Form>
- 
+
 </div>
 )
 }
@@ -43,7 +43,7 @@ const SignInForm = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-   email: Yup.string().required(),
+   email: Yup.string().required('No email provided'),
   
    password: Yup.string()
    .required('No password provided.') 

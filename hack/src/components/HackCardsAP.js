@@ -36,20 +36,21 @@ import img from "../imgs/placeholderimg.png"
   
 
 
-const HackCards = ({ characters }) => {
+const HackCards = ({ hacks }) => {
+  
  
     return (
       <Col xs="6" md="4" xl="3">
         <CardStyle >
           <Div>
-          <Name>{characters.title}</Name>
-            <Info>{characters.description}</Info>
+          <Name>{hacks.title}</Name>
+            <Info>{hacks.description}</Info>
             
            
             </Div>
   
             <Div>
-            <Info> <img src = {img} ALT = "BLAH"/> </Info>
+            <Info> <img src = {img} ALT = "lifehack"/> </Info>
             </Div>
          
          

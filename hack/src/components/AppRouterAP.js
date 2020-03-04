@@ -44,7 +44,7 @@ function AppRouter() {
     return(
 <Router>
     <Div>
-     <nav>
+     <nav className = "main-nav">
          <div>
         
         </div>

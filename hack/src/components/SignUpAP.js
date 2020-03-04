@@ -5,8 +5,10 @@ import * as Yup from "yup";
 
 const SignUp = ({errors, touched}) => {
 return (
+<div className="Sign-up-div"> 
 <div>
-<Form>
+<Form className="Sign-up"> 
+<h2>Sign Up</h2>
 <label htmlFor = "firstname">
 <Field type="text" name="firstname" placeholder="First Name" />
 {touched.firstname && errors.firstname && (
@@ -30,11 +32,12 @@ return (
     <p>{errors.password}</p>
 )}
   </label>
-  <button type="submit">Submit</button>
-
+  <label>
+  <button type="submit">Sign Up</button>
+  </label>
 
 </Form>
- 
+</div>
 </div>
 )
 }
@@ -56,7 +59,7 @@ const SignUpForm = withFormik({
     firstname: Yup.string().required("Must put in your first name"),
     lastname: Yup.string().required("Must put in your last name"),
     password: Yup.string()
-    .required('No password provided.') 
+    .required() 
     .min(8, 'Password is too short - should be 8 chars minimum.')
     .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
    

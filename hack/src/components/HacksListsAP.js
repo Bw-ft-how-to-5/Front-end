@@ -30,11 +30,11 @@ export default function HackLists () {
 axios.get("https://howto5.herokuapp.com/api/study/")
 .then(response => {
     console.log(response);
-    const characters = response.data.filter(character =>
-      character.title.toLowerCase().includes(query.toLowerCase())
+    const hacks = response.data.filter(hack =>
+      hack.title.toLowerCase().includes(query.toLowerCase())
     );
   
-    setData(characters);
+    setData(hacks);
   });
 }, [query]);
 
@@ -58,8 +58,8 @@ return (
 <div>
         <Container>
         <Row>
-            {data.map(characters => {
-        return <HackCards characters={characters} key={characters.id} />;
+            {data.map(hacks => {
+        return <HackCards hacks={hacks} key={hacks.id} />;
       })}  </Row>
     </Container>
     </div>
