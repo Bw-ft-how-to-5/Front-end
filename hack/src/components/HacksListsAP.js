@@ -27,11 +27,11 @@ export default function HackLists () {
 
     useEffect (() => {
 
-axios.get("https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/")
+axios.get("https://howto5.herokuapp.com/api/study/")
 .then(response => {
     console.log(response);
-    const characters = response.data.results.filter(character =>
-      character.name.toLowerCase().includes(query.toLowerCase())
+    const characters = response.data.filter(character =>
+      character.title.toLowerCase().includes(query.toLowerCase())
     );
   
     setData(characters);
@@ -43,7 +43,7 @@ setQuery(event.target.value);
 };
 return (
 <div>
-  <Form>
+  <form className="search">
     <Input
       type="text"
       onChange={handleInputChange}
@@ -51,10 +51,10 @@ return (
       name="name"
       tabIndex="0"
       className="prompt search-name"
-      placeholder="search by name"
+      placeholder="search by title"
       autoComplete="off"
     />
-  </Form>
+  </form>
 <div>
         <Container>
         <Row>

@@ -4,29 +4,68 @@ import SignUpAP from "./SignUpAP"
 import SignInAP from "./SignInAP"
 import Home from "./HomeAP"
 import HackLists from "./HacksListsAP"
+import styled from "styled-components"
+
+const Div = styled.div `
+background-color:#535974;
+padding-top:0.2px;
+
+
+`
+const Li = styled.li `
+list-style-type:none;
+font-family: 'Amatic SC';
+font-size:2rem;
+color:white;
+margin-right:2%;
+
+
+`
+
+const Ul = styled.ul `
+display:flex;
+justify-content:space-between;
+align-items:center;
+`
+
+const A = styled.a `
+color:white;
+
+`
+
+const H2 = styled.h2 `
+color:white;
+display:flex;
+
+font-size:2rem;
+`
 
 function AppRouter() {
     return(
 <Router>
-    <div>
+    <Div>
      <nav>
-         <ul>
-             <li>
-                 <Link to  = "/">Home</Link>
-             </li>
-             <li>
-                <Link to = './signup'>Sign Up</Link>
-             </li>
+         <div>
+        
+        </div>
+         <Ul>
+         <H2>Hack @ I.T</H2>
+             <Li>
+                 <Link to  = "/"><A>Home</A></Link>
+             </Li>
+             <Li>
+                <Link to = './signup'><A>Sign Up</A></Link>
+             </Li>
 
-             <li>
-                <Link to = './signin'>Sign In</Link>
-             </li>
-            <li>
-                <Link to = './hacks'>View Hacks</Link>
-            </li>
-         </ul>
+             <Li>
+                <Link to = './signin'><A>Sign In</A></Link>
+             </Li>
+            <Li>
+                <Link to = './hacks'><A>View Hacks</A></Link>
+            </Li>
+         </Ul>
      </nav>
-    </div>
+    </Div>
 <Switch>
 
 <Route  path = '/signin' component = {SignInAP}/>

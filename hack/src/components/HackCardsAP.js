@@ -1,21 +1,22 @@
 import React from "react";
 import styled from "styled-components"
 import { Col  } from "reactstrap";
+import img from "../imgs/placeholderimg.png"
   
   const CardStyle = styled.div `
   margin:5%;
-  background:black;
+  background:#535974;
   border-radius:20px;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin:5%;
+  margin:2% 10%;
   flex-direction:row-reverse;
   `
   
   
   const Name = styled.p `
-  color:#32CD32;
+  color:white;
   
   font-weight:bold;
   font-size:2rem;
@@ -23,7 +24,7 @@ import { Col  } from "reactstrap";
   `
   
   const Info = styled.p `
-  color:#32CD32;
+  color:white;
   font-size:2rem;
   
   
@@ -41,14 +42,14 @@ const HackCards = ({ characters }) => {
       <Col xs="6" md="4" xl="3">
         <CardStyle >
           <Div>
-          <Name>Name: {characters.name}</Name>
-            <Info>Status: {characters.status}</Info>
+          <Name>{characters.title}</Name>
+            <Info>{characters.description}</Info>
             
-            <Info>Species: {characters.species} </Info>
+           
             </Div>
   
             <Div>
-            <Info> <img src = {characters.image} ALT = "BLAH"/> </Info>
+            <Info> <img src = {img} ALT = "BLAH"/> </Info>
             </Div>
          
          
