@@ -12,7 +12,7 @@ const StudyHacksComp = () => {
             <br />
             <p>Study Hacks</p>
 
-            {/* card */}
+            {/* card via api*/}
             <div>
 
                 <img />

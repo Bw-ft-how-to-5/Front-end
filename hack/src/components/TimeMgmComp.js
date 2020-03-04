@@ -12,7 +12,7 @@ const TimeMgmComp = () => {
             <br />
             <p>Time Hacks</p>
 
-            {/* card */}
+            {/* card via api*/}
             <div>
 
                 <img />
