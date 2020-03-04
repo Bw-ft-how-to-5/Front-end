@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from "formik"
 import * as Yup from "yup";
 
 
-const SignUp = ({errors, touched}) => {
+const SignUp = ({values, errors, touched}) => {
 return (
 <div className="Sign-up-div"> 
 <div>
@@ -32,9 +32,25 @@ return (
     <p>{errors.password}</p>
 )}
   </label>
+  <label
+  htmlFor="agreement"
+  className='checkbox'
+  >
+    I Agree the <a href ="https://www.google.com/">terms of use</a> & <a href ="https://www.google.com/">Privacy Policy</a>
+    <Field
+    id="agreement"
+    type="checkbox"
+    name="agreement"
+    checked= {values.agreement}
+    
+    />
+    <span className='checked'/>
+
+  </label>
   <label>
   <button type="submit">Sign Up</button>
   </label>
+      
 
 </Form>
 </div>
@@ -50,7 +66,10 @@ const SignUpForm = withFormik({
       email:props.email || "",
       password:props.password  || "",
       lastname:props.lastname || "",
-      firstname:props.firstname  || ""
+      firstname:props.firstname  || "",
+      agreement: props.agreement|| false,
+
+      
       
     };
   },
