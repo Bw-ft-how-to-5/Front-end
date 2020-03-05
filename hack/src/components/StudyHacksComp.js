@@ -1,7 +1,26 @@
-import React from 'react';
-
+import React, { useEffect, useContext } from 'react';
+import axios from 'axios';
+import { StudyContext } from './stateManagement/StudyContext';
+import ContentCard from './ContentCard';
 
 const StudyHacksComp = () => {
+
+    const {studyData, setStudyData } = useContext(StudyContext)
+    
+    useEffect(() => {
+        axios
+          .get('https://howto5.herokuapp.com/api/study')
+             .then(res => {
+               console.log('STUDY HACK DATA FROM API', res)
+               setStudyData(res.data)
+             })
+             .catch(error => {
+               console.log("Sorry nothing returned", error);
+             })
+      }, []); 
+
+
+    
 
     return (
 
@@ -12,14 +31,7 @@ const StudyHacksComp = () => {
             <br />
             <p>Study Hacks</p>
 
-            {/* card via api*/}
-            <div>
-
-                <img />
-
-                <span>api.title</span>
-                <p>api.content</p>
-            </div>
+            {studyData.map(item => <ContentCard item={item}/>)}
 
         </>
 

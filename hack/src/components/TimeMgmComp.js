@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TimeContext } from './stateManagement/TimeContext';
+import ContentCard from './ContentCard';
 
 
 const TimeMgmComp = () => {
+
+    const {timeData, setTimeData}=useContext(TimeContext)
 
     return (
 
@@ -12,14 +16,8 @@ const TimeMgmComp = () => {
             <br />
             <p>Time Hacks</p>
 
-            {/* card via api*/}
-            <div>
-
-                <img />
-
-                <span>api.title</span>
-                <p>api.content</p>
-            </div>
+            <ContentCard />
+            
 
         </>
 
@@ -27,4 +25,4 @@ const TimeMgmComp = () => {
     
 };
 
-export default TimeMgmComp;
+// export default TimeMgmComp;
