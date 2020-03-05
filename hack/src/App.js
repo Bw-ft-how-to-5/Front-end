@@ -20,23 +20,25 @@ function App() {
 
 
   return (
+    <div>
 
+      <TimeContext.Provider value={{ timeData, setTimeData }}>
+        <StudyContext.Provider value={{ studyData, setStudyData }} >
+          <div className="App">
 
-    <TimeContext.Provider value={{ timeData, setTimeData }}>
-      <StudyContext.Provider value={{ studyData, setStudyData }} >
-        <div className="App">
+            {/* <TimeMgmComp /> */}
 
-          {/* <TimeMgmComp /> */}
+            <StudyHacksComp />
 
-          <StudyHacksComp />
+          </div>
+        </StudyContext.Provider>
+      </TimeContext.Provider>
 
-        </div>
-      </StudyContext.Provider>
-    </TimeContext.Provider>
+      <div className="App">
+  
+      <AppRouter/> 
+    </div>
 
-    <div className="App">
- 
-    <AppRouter/> 
     </div>
 
   );
