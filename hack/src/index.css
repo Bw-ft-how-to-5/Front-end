@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body {
+  font-family: 'Playfair Display';
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Amatic SC';
+}

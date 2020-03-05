@@ -36,3 +36,101 @@
     transform: rotate(360deg);
   }
 }
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.search input {
+  width: 500px;
+  height: 50px;
+  margin: 0.2rem;
+  border: 2px solid black;
+  font-size: 20px;
+ text-align: center;
+  
+}
+
+
+.main-nav ul li a {
+text-decoration: none;
+font-size: 2.5rem;
+
+}
+
+.Sign-in{
+
+  padding-top: .5rem;
+  display: flex;
+flex-direction: column;
+color:white;
+font-size: 2rem;
+background-color:#535974 ;
+width:500px;
+}
+
+.Sign-in-div{
+  display: flex;
+  justify-content: center;
+}
+
+.Sign-in label {
+  margin: .5rem 0;
+}
+
+.Sign-in h2{
+  margin:0;
+ }
+ .Sign-in button {
+
+  font-size: 1.8rem;
+  border-radius: 10px;
+  border:none;
+}
+.Sign-in button:hover {
+  border:black 1px solid;
+   
+  }
+
+.Sign-up h2{
+ margin:0;
+}
+.Sign-up{
+padding-top: .5rem;
+  display: flex;
+flex-direction: column;
+color:white;
+font-size: 2rem;
+background-color:#535974 ;
+width:500px;
+
+}
+.Sign-up-div{
+  display: flex;
+  justify-content: center;
+}
+
+.Sign-up label {
+  margin: .5rem 0;
+}
+
+.Sign-up button {
+
+  font-size: 1.8rem;
+  border-radius: 10px;
+  border:none;
+}
+
+.Sign-up button:hover {
+border:black 1px solid;
+ 
+}
+
+.checkbox {
+  display: block;
+
+ 
+  font-size: 18px;
+  
+
+}
